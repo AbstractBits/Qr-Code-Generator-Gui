@@ -30,4 +30,4 @@ __________________*you can use setup file________________________
   pip install -r requirements.txt
 
 3.Run the application:
-  python qr_code_generator.py
+  python qr_code_generator.pyw
