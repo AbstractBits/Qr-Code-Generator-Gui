@@ -30,14 +30,4 @@ __________________*you can use setup file________________________
   pip install -r requirements.txt
 
 3.Run the application:
-  python qr_code_generator.py
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
-"# Qr-Code-Generator-Gui" 
+  python qr_code_generator.pyw
