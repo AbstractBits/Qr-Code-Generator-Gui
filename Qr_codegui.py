@@ -6,7 +6,7 @@ import io
 
 ctk.set_appearance_mode='system'
 root=ctk.CTk()
-icon_path = 'E:/githubprojects/QR code gui/icon.ico' 
+icon_path = 'E:/githubprojects/qrcodegui/icon.ico' 
 root.iconbitmap(icon_path)
 root.title('Qr Code Generator')
 root.resizable(False,False)
@@ -26,7 +26,7 @@ def open_github():
 
 def show_about():
     about_window = ctk.CTkToplevel(root)
-    icon_path = 'E:/githubprojects/QR code gui/icon.ico' 
+    icon_path = 'E:/githubprojects/qrcodegui/icon.ico' 
     about_window.iconbitmap(icon_path)   
     about_window.title("About")
     about_window.geometry("300x200")
@@ -65,9 +65,7 @@ frame2=ctk.CTkFrame(root,fg_color=root.cget('bg'))
 frame2.place(x=75,y=90)
 frame3=ctk.CTkFrame(root,fg_color=root.cget('bg'))
 frame3.pack(side='bottom',pady=15)
-label1=ctk.CTkLabel(frame2,text='Enter your text below',font=('',15))
-label1.pack()
-entry=ctk.CTkEntry(frame2,width=250,border_color=root.cget('bg'))
+entry=ctk.CTkEntry(frame2,width=250,border_color=root.cget('bg'),placeholder_text='Enter your text',)
 entry.pack()
 frame1=ctk.CTkFrame(root,fg_color='black',width=300,height=300)
 frame1.place(x=50,y=230)
@@ -81,8 +79,7 @@ label_title.place(x=110, y=25)
 def save_button_func():
     data = entry.get()
     img  = qrcode.make(data)
-    name = data + '.png'
-    file_path=filedialog.asksaveasfilename(initialfile=name,defaultextension='.png',filetypes=[('PNG files','*.png')],)
+    file_path=filedialog.asksaveasfilename(initialfile='Qrcode',defaultextension='.png',filetypes=[('PNG files','*.png')],)
     def change_button_color():
         savebtn.configure(text='Save',fg_color="blue")
 
@@ -95,15 +92,15 @@ savebtn=ctk.CTkButton(frame3,text='Save',width=100,height=10,command=save_button
 
 #Delete button function to delet the generated Qr code 
 
-def delet_button_func():
+def delete_button_func():
     global qr_image
     qr_image = None
-    label2.configure(image=None)
-    label2.configure(text="Preview")
+    label2.configure(image='')
     deletebtn.grid_remove()
     savebtn.grid_remove()
 
-deletebtn=ctk.CTkButton(frame3,text ='Delete',width=100,height=10,command=delet_button_func,fg_color='red',border_color='red',border_width=2)
+
+deletebtn=ctk.CTkButton(frame3,text ='Delete',width=100,height=10,command=delete_button_func,fg_color='red',border_color='red',border_width=2)
 
 
 def change_button_name():
@@ -117,7 +114,7 @@ def generate_qr(data):
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
     buffer = io.BytesIO()
-    img.save(buffer,'PNG')
+    img.save( buffer,'PNG')
     buffer.seek(0)
     pil_image = Image.open(buffer)
     return ctk.CTkImage(pil_image, size=(300, 300))
