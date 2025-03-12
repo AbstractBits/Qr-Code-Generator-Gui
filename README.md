@@ -2,6 +2,9 @@
 
 A Python application to generate QR codes using a simple graphical user interface (GUI) built with the `customtkinter` library.
 
+![Screenshot 1](screenshot1.png)![Screenshot 1](screenshot2.png)
+
+
 ## Features
 
 - Generate QR codes from any text input.
