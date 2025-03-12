@@ -6,7 +6,7 @@ import io
 
 ctk.set_appearance_mode='system'
 root=ctk.CTk()
-icon_path = 'E:/githubprojects/qrcodegui/icon.ico' 
+icon_path = 'icon.ico' 
 root.iconbitmap(icon_path)
 root.title('Qr Code Generator')
 root.resizable(False,False)
@@ -22,7 +22,7 @@ root.geometry(f'{window_width}x{window_height}+{x_coordinate}+{y_coordinate}')
 import webbrowser
 
 def open_github():
-    webbrowser.open("https://github.com/RemovedTax")
+    webbrowser.open("https://github.com/AbstractBits")
 
 def show_about():
     about_window = ctk.CTkToplevel(root)
