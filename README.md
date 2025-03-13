@@ -26,8 +26,8 @@ __________________*you can use setup file________________________
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/qr-code-generator.git
-   cd qr-code-generator
+   git clone https://github.com/AbstractBits/Qr-Code-Generator-Gui.git
+   cd Qr-Code-Generator-Gui
 
 2.Install dependencies:
   pip install -r requirements.txt
